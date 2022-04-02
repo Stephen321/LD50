@@ -4,10 +4,10 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
-#include "LDCharacterBase.generated.h"
+#include "LDPlayerCharacterBase.generated.h"
 
 UCLASS()
-class LD50_API ALDCharacterBase : public ACharacter
+class LD50_API ALDPlayerCharacterBase : public ACharacter
 {
 	GENERATED_BODY()
 
@@ -26,4 +26,14 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
+private:
+	// components
+	UPROPERTY(Category = JGG, VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
+	class UCameraComponent* CameraComponent;
+
+	UPROPERTY(Category = JGG, VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
+	class USpringArmComponent* SpringArmComponent;
+
+	static FName CameraComponentName;
+	static FName SpringArmComponentName;
 };
