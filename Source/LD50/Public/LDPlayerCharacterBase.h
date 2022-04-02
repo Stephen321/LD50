@@ -4,6 +4,8 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "GameFramework/SpringArmComponent.h"
+#include "Camera/CameraComponent.h"
 #include "LDPlayerCharacterBase.generated.h"
 
 UCLASS()
@@ -13,7 +15,7 @@ class LD50_API ALDPlayerCharacterBase : public ACharacter
 
 public:
 	// Sets default values for this character's properties
-	ALDCharacterBase();
+	ALDPlayerCharacterBase();
 
 protected:
 	// Called when the game starts or when spawned

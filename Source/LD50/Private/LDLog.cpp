@@ -1,3 +1,3 @@
-#include "JGGLog.h"
+#include "LDLog.h"
 
 DEFINE_LOG_CATEGORY(LogLD);

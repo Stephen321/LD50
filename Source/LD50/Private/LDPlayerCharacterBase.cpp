@@ -5,22 +5,26 @@
 
 #include "LDLog.h"
 
+
+FName ALDPlayerCharacterBase::CameraComponentName = TEXT("Camera");
+FName ALDPlayerCharacterBase::SpringArmComponentName = TEXT("SpringArm");
+
 // Sets default values
-ALDPlayerCharacterBase::ALDCharacterBase()
+ALDPlayerCharacterBase::ALDPlayerCharacterBase()
 {
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
 	SpringArmComponent = CreateDefaultSubobject<USpringArmComponent>(SpringArmComponentName);
 	SpringArmComponent->SetupAttachment(RootComponent);
-	SpringArmComponent->TargetArmLength = 450;
+	SpringArmComponent->TargetArmLength = 250;
 
 	CameraComponent = CreateDefaultSubobject<UCameraComponent>(CameraComponentName);
 	CameraComponent->SetupAttachment(SpringArmComponent);
 }
 
 // Called when the game starts or when spawned
-void ALDCharacterBase::BeginPlay()
+void ALDPlayerCharacterBase::BeginPlay()
 {
 	Super::BeginPlay();
 	UE_LOG(LogLD, Warning, TEXT("Test player character BeginPlay"));
@@ -28,13 +32,13 @@ void ALDCharacterBase::BeginPlay()
 }
 
 // Called every frame
-void ALDCharacterBase::Tick(float DeltaTime)
+void ALDPlayerCharacterBase::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 }
 
 // Called to bind functionality to input
-void ALDCharacterBase::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
+void ALDPlayerCharacterBase::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	check(PlayerInputComponent);
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
