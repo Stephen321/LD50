@@ -31,10 +31,10 @@ public:
 private:
 	// components
 	UPROPERTY(Category = JGG, VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
-	class UCameraComponent* CameraComponent;
+	TObjectPtr<class UCameraComponent> CameraComponent;
 
 	UPROPERTY(Category = JGG, VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
-	class USpringArmComponent* SpringArmComponent;
+	TObjectPtr<class USpringArmComponent> SpringArmComponent;
 
 	static FName CameraComponentName;
 	static FName SpringArmComponentName;
