@@ -13,4 +13,11 @@ UCLASS()
 class LD50_API ALDGameModeBase : public AGameModeBase
 {
 	GENERATED_BODY()
+
+public:
+	ALDGameModeBase();
+
+protected:
+
+private:
 };

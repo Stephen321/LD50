@@ -2,3 +2,7 @@
 
 
 #include "LDGameModeBase.h"
+
+ALDGameModeBase::ALDGameModeBase()
+{
+}
